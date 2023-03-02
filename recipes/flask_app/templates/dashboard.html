@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <h1>Welcome, {{user.first_name}}!</h1>
+    <a href="/new_recipe">Create New Recipe</a>
+    <table style="border: 2px solid blue ; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="border: 2px solid blue ; padding: 10px;">Name</th>
+                <th style="border: 2px solid blue ; padding: 10px;">Under</th>
+                <th style="border: 2px solid blue ; padding: 10px;">Posted By</th>
+                <th style="border: 2px solid blue ; padding: 10px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipes %}
+            <tr>
+                <td style="border: 2px solid blue ; padding: 20px;">{{recipe.name}}</td>
+                <td style="border: 2px solid blue ; padding: 20px;">{{recipe.under_30_min}}</td>
+                <td style="border: 2px solid blue ; padding: 20px;">{{recipe.creator.first_name}}</td>
+                <td style="border: 2px solid blue ; padding: 20px;">
+                    <a style = "color: black;" href="/view_recipe/{{recipe.id}}">View Recipe</a>
+                    {% if session['uid'] == recipe.creator.id %}
+                    <a style = "color: blue;" href="/edit_recipe/{{recipe.id}}">Edit</a>
+                    <a style = "color: red;" href="/delete_recipe/{{recipe.id}}">Delete</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/logout">Logout</a>
+</body>
+
+</html>

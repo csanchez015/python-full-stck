@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/dashboard">Back to Recipes</a>
+    
+    <h1>Welcome, {{user.first_name}}!</h1>
+    <div style="background-color: rgb(151, 151, 151); width: 400px"  class="box">
+        <h1 style="text-decoration: underline">{{recipes.name}}</h1>
+        <h2>Description : {{recipes.description}}</h2>
+        <h2>Cooked Under 30 min? {{recipes.under_30_min}}</h2>
+        <h2>Instructions: {{recipes.instructions}}</h2>
+        <h2>Date Made: {{recipes.date_made}}</h2>
+    </div>
+    <a href="/logout">Logout</a>
+
+</body>
+
+</html>
