@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show User</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/show_user.css')}}">
+</head>
+
+<body>
+
+    <h1>User {{user.id}} Info</h1>
+
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Created at</th>
+            <th>Updated at</th>
+        </tr>
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}} {{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.created_at}}</td>
+            <td>{{user.updated_at}}</td>
+    </table>
+
+    <div class="add">
+        <a style="color: rgb(43, 0, 255);" href="/edit_user/{{user.id}}">EDIT</a>
+        <a style="color: rgb(255, 0, 0);" href="/delete_user/{{user.id}}">DELETE</a>
+        <a style="color: rgb(0, 0, 0);" href="/">HOME</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+table, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+.table{
+    margin: 0 auto;
+    background-color: antiquewhite;
+}
+
+h1{
+    text-align: center;
+}
+
+.container{
+    font-size: 1.4em;
+    text-align: center;
+    margin-top: 15px;
+    
+}

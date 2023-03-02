@@ -1,0 +1,22 @@
+h1{
+    text-align: center;
+}
+
+.form{
+    height: 220px;
+    width: 250px;
+    margin: 0 auto;
+    background-color: rgb(168, 168, 169);
+}
+
+.label{
+    font-size: 1.4em;
+    height: 200px;
+    padding-top:20px;
+}
+
+.add{
+    text-align: center;
+    height: 100px;
+    margin-top: 20px;
+}
